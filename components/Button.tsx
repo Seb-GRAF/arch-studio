@@ -7,7 +7,7 @@ interface Props {
 const Button = ({ children }: Props): JSX.Element => {
   return (
     <button className='px-8 py-6 bg-gray-900 hover:bg-gray-800 active:bg-gray-500 text-white font-bold flex items-center gap-6 group transition-colors'>
-      <span>Button</span>
+      <span className='whitespace-nowrap'>{children}</span>
       <svg
         className='w-6 group-hover:translate-x-2 transition-transform'
         viewBox='0 0 24 20'

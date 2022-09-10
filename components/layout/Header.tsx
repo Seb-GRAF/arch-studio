@@ -33,8 +33,8 @@ const Header = (): JSX.Element => {
   }, [])
 
   return (
-    <header className='relative bg-white flex flex-col'>
-      <div className='p-8 sm:px-0 sm:py-14 flex justify-between sm:justify-start sm:gap-20 items-center'>
+    <header className='sm:mx-24 xl:mx-0 relative bg-white flex flex-col'>
+      <div className='p-8 sm:px-0 sm:py-14 flex justify-between items-center sm:max-w-lg'>
         {/* LOGO */}
         <Link href={'/'} passHref>
           <a>
@@ -105,10 +105,10 @@ const Header = (): JSX.Element => {
         ))}
       </nav>
 
-      {/* PAGE NAME GRAPHIC */}
+      {/* PAGE NAME */}
       <div
         aria-hidden='true'
-        className='text-divider absolute rotate-90 origin-left -top-3 -left-[5vw] md:-left-[10vw] sm:flex items-center tracking-[18px] gap-12 pointer-events:none hidden'>
+        className='text-divider absolute rotate-90 origin-left -top-3 -left-12 xl:-left-[3vw] 2xl:-left-[6vw] sm:flex items-center tracking-[18px] gap-12 pointer-events:none hidden'>
         <div className='w-28 bg-divider h-px'></div>
         <p className='uppercase'>{pageName}</p>
       </div>
