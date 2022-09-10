@@ -1,22 +1,23 @@
+import Link from 'next/link'
 import { ReactNode } from 'react'
 
 interface Props {
   children: ReactNode
+  href: string
 }
 
-const Button = ({ children }: Props): JSX.Element => {
+const Button = ({ children, href }: Props): JSX.Element => {
   return (
-    <button className='px-8 py-6 bg-gray-900 hover:bg-gray-800 active:bg-gray-500 text-white font-bold flex items-center gap-6 group transition-colors'>
-      <span className='whitespace-nowrap'>{children}</span>
-      <svg
-        className='w-6 group-hover:translate-x-2 transition-transform'
-        viewBox='0 0 24 20'
-        fill='none'
-        xmlns='http://www.w3.org/2000/svg'>
-        <path d='M15 1L24 10L15 19' stroke='white' strokeWidth='2' />
-        <path d='M0 10H24' stroke='white' strokeWidth='2' />
-      </svg>
-    </button>
+    <Link href={href} passHref>
+      <a className='px-8 py-6 bg-gray-900 hover:bg-gray-800 active:bg-gray-500 text-white font-bold flex items-center gap-6 group transition-colors'>
+        <span className='whitespace-nowrap'>{children}</span>
+        <img
+          src='/assets/icons/icon-arrow.svg'
+          alt=''
+          className='group-hover:translate-x-2 transition-transform'
+        />
+      </a>
+    </Link>
   )
 }
 

@@ -12,6 +12,10 @@ type DataType = {
   }
   footer: {
     nav: string[][]
+    link: {
+      name: string
+      href: string
+    }
   }
 }
 
@@ -30,10 +34,12 @@ const Layout = ({ children }: Props): JSX.Element => {
   if (error) return <div>Failed to load</div>
   if (!parsedData) return <div>Loading...</div>
   return (
-    <div className='flex flex-col max-w-6xl mx-auto min-h-screen'>
+    <div className='flex flex-col xl:max-w-6xl mx-auto min-h-screen'>
       <SEO />
       <Header data={parsedData.header} />
-      <main className='flex-grow'>{children}</main>
+      <main className='flex-grow sm:mx-24 xl:mx-0 mb-16 sm:mb-48'>
+        {children}
+      </main>
       <Footer data={parsedData.footer} />
     </div>
   )

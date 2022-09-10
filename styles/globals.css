@@ -1,28 +1,36 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @font-face {
   font-family: 'League Spartan';
   font-style: normal;
   font-weight: 100 900;
-  font-display: optional;
+  /* font-display: optional; */
   src: url(/fonts/LeagueSpartan-VariableFont_wght.ttf);
 }
 
-body {
-  @apply text-lg leading-[24px] font-medium text-gray-100 font-spartan;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .word-spacing-xl {
+    word-spacing: 99999px;
+  }
+  .word-spacing-lg {
+    word-spacing: 100px;
+  }
+  .heading-xl {
+    @apply text-[250px] leading-[200px] tracking-[-5px] font-bold;
+  }
+  .heading-lg {
+    @apply text-8xl leading-[80px] tracking-[-2px] font-bold;
+  }
+  .heading-md {
+    @apply text-7xl leading-[64px] tracking-[-2px] font-bold;
+  }
+  .heading-sm {
+    @apply text-[32px] leading-[40px] font-bold;
+  }
 }
 
-.heading-xl {
-  @apply text-[250px] leading-[200px] tracking-[-5px] font-bold text-[#1B1D23];
-}
-.heading-lg {
-  @apply text-8xl leading-[80px] tracking-[-2px] font-bold text-[#1B1D23];
-}
-.heading-md {
-  @apply text-7xl leading-[64px] tracking-[-2px] font-bold text-[#1B1D23];
-}
-.heading-sm {
-  @apply text-[32px] leading-[40px] font-bold text-[#1B1D23];
+body {
+  @apply text-lg leading-[24px] font-medium text-gray-100 font-spartan text-[#1B1D23];
 }
