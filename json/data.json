@@ -1,0 +1,16 @@
+{
+  "header": {
+    "nav": [
+      ["/portfolio", "portfolio"],
+      ["/about", "about us"],
+      ["/contact", "contact"]
+    ]
+  },
+  "footer": {
+    "nav": [
+      ["/portfolio", "portfolio"],
+      ["/about", "about us"],
+      ["/contact", "contact"]
+    ]
+  }
+}

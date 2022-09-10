@@ -1,8 +1,13 @@
 import Link from 'next/link'
-import data from '../../data.json'
 import { Button } from '..'
 
-const Footer = (): JSX.Element => {
+interface Props {
+  data: {
+    nav: string[][]
+  }
+}
+
+const Footer = ({ data }: Props): JSX.Element => {
   return (
     <footer className='isolate relative bg-lightBlue flex flex-col sm:flex-row items-center gap-8 sm:gap-0 justify-center sm:justify-between pb-8 sm:pb-0 after:content-[""] after:absolute after:top-0 after:right-0 after:bg-white after:w-40 xl:after:w-32 after:h-full after:-z-10 after:hidden sm:after:block'>
       <div className='max-w-xl xl:max-w-2xl isolate w-full flex flex-col gap-8 sm:gap-0 sm:flex-row items-center justify-center sm:justify-start'>

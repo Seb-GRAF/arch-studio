@@ -13,8 +13,8 @@ const Button = ({ children }: Props): JSX.Element => {
         viewBox='0 0 24 20'
         fill='none'
         xmlns='http://www.w3.org/2000/svg'>
-        <path d='M15 1L24 10L15 19' stroke='white' stroke-width='2' />
-        <path d='M0 10H24' stroke='white' stroke-width='2' />
+        <path d='M15 1L24 10L15 19' stroke='white' strokeWidth='2' />
+        <path d='M0 10H24' stroke='white' strokeWidth='2' />
       </svg>
     </button>
   )

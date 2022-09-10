@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import data from '../../data.json'
 
 type PageName = 'home' | 'portfolio' | 'about us' | 'contact' | '404'
 
-const Header = (): JSX.Element => {
+interface Props {
+  data: {
+    nav: string[][]
+  }
+}
+
+const Header = ({ data }: Props): JSX.Element => {
   const [pageName, setPageName] = useState<PageName>('home')
   const router = useRouter()
 
@@ -99,7 +104,7 @@ const Header = (): JSX.Element => {
       {/* MOBILE NAV */}
       <nav className='nav absolute top-full right-0 bg-lightBlue w-[90%] py-10 px-12 flex-col gap-4 hidden sm:hidden'>
         {data.nav.map(([href, label]) => (
-          <Link href={href} passHref>
+          <Link href={href} passHref key={`navLink-${href}`}>
             <a className='capitalize heading-sm'>{label}</a>
           </Link>
         ))}
