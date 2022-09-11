@@ -12,16 +12,15 @@ interface Props {
 
 const Header = ({ data }: Props): JSX.Element => {
   const [pageName, setPageName] = useState<PageName>('home')
+  const [isNavOpen, setIsNavOpen] = useState(false)
   const router = useRouter()
 
-  const toggleNav = (): void => {
-    const nav = document.querySelector('.nav')
-    const overlay = document.querySelector('.overlay')
+  useEffect(() => {
+    const html = document.querySelector('html')
 
-    nav?.classList.toggle('hidden')
-    nav?.classList.toggle('flex')
-    overlay?.classList.toggle('hidden')
-  }
+    if (isNavOpen) html?.classList.add('fixed')
+    else html?.classList.remove('fixed')
+  }, [isNavOpen])
 
   useEffect(() => {
     const pathName = router.asPath
@@ -40,8 +39,8 @@ const Header = ({ data }: Props): JSX.Element => {
   }, [])
 
   return (
-    <header className='sm:mx-24 xl:mx-0 relative flex flex-col'>
-      <div className='p-8 sm:px-0 sm:py-14 flex justify-between items-center sm:max-w-lg bg-white z-50'>
+    <header className='tablet:mx-[12vw] desktop:mx-0 relative flex flex-col'>
+      <div className='p-8 tablet:px-0 tablet:py-14 flex justify-between items-center tablet:max-w-lg bg-white z-50'>
         {/* LOGO */}
         <Link href={'/'} passHref>
           <a>
@@ -49,13 +48,13 @@ const Header = ({ data }: Props): JSX.Element => {
             <img
               src='/assets/logo-dark.svg'
               alt='logo'
-              className='w-20 sm:w-24'
+              className='w-20 tablet:w-24'
             />
           </a>
         </Link>
 
         {/* DESKTOP NAV */}
-        <nav className='top-full right-0 hidden sm:flex gap-14 text-gray-100 font-bold leading-[25px] whitespace-nowrap'>
+        <nav className='top-full right-0 hidden tablet:flex gap-14 text-gray-100 font-bold leading-[25px] whitespace-nowrap'>
           {data.nav.map(([href, label]) => (
             <Link href={href} passHref key={`navLink-${href}`}>
               <a
@@ -72,39 +71,49 @@ const Header = ({ data }: Props): JSX.Element => {
         </nav>
 
         {/* HAMBURGER BUTTON */}
-        <button className='sm:hidden w-6' onClick={toggleNav}>
-          <svg
-            viewBox='0 0 24 17'
-            fill='none'
-            xmlns='http://www.w3.org/2000/svg'>
-            <rect width='24' height='3' fill='#1B1D23' />
-            <rect y='7' width='24' height='3' fill='#1B1D23' />
-            <rect y='14' width='24' height='3' fill='#1B1D23' />
-          </svg>
+        <button
+          className='tablet:hidden w-6'
+          onClick={() => {
+            setIsNavOpen((prev) => !prev)
+          }}>
+          <figure className='flex items-center justify-center'>
+            <img
+              src={`/assets/icons/icon-${
+                isNavOpen ? 'close' : 'hamburger'
+              }.svg`}
+              alt='open menu'
+            />
+          </figure>
         </button>
       </div>
 
       {/* MOBILE NAV */}
-      <nav className='nav absolute top-full right-0 bg-lightBlue w-[90%] py-10 px-12 flex-col gap-4 hidden sm:hidden z-50'>
-        {data.nav.map(([href, label]) => (
-          <Link href={href} passHref key={`navLink-${href}`}>
-            <a className='capitalize heading-sm'>{label}</a>
-          </Link>
-        ))}
-      </nav>
+      {isNavOpen && (
+        <>
+          <nav className='nav flex absolute top-full right-0 bg-lightBlue w-[90%] py-10 px-12 flex-col gap-4 z-50'>
+            {data.nav.map(([href, label]) => (
+              <Link href={href} passHref key={`navLink-${href}`}>
+                <a className='capitalize heading-sm'>{label}</a>
+              </Link>
+            ))}
+          </nav>
+
+          {/* OVERLAY */}
+          <div
+            className='overlay fixed w-[120%] h-[120%] bg-black/70 z-40 -top-[10%] -left-[10%]'
+            onClick={() => {
+              setIsNavOpen((prev) => !prev)
+            }}></div>
+        </>
+      )}
 
       {/* PAGE NAME */}
       <div
         aria-hidden='true'
-        className='text-divider absolute rotate-90 origin-left -top-3 -left-12 xl:-left-[3vw] 2xl:-left-[6vw] sm:flex items-center tracking-[18px] gap-12 pointer-events:none hidden'>
+        className='text-divider absolute rotate-90 origin-left -top-3 -left-[6vw] desktop:-left-20 tablet:flex items-center tracking-[18px] gap-12 pointer-events:none hidden'>
         <div className='w-28 bg-divider h-px'></div>
         <p className='uppercase'>{pageName}</p>
       </div>
-
-      {/* OVERLAY */}
-      <div
-        className='hidden overlay fixed w-screen h-screen bg-black/70 z-40'
-        onClick={toggleNav}></div>
     </header>
   )
 }

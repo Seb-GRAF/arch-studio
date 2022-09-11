@@ -20,6 +20,10 @@ module.exports = {
         divider: '#C8CCD8',
       },
     },
+    screens: {
+      tablet: '768px',
+      desktop: '1440px',
+    },
   },
   plugins: [],
 }
