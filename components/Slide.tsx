@@ -1,4 +1,3 @@
-import React, { ReactNode } from 'react'
 import Image from 'next/image'
 import { Button } from '.'
 import { useWindowSize } from '../hooks/useWindowSize'

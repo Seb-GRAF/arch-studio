@@ -1,13 +1,12 @@
 import { useEffect, useState, useRef } from 'react'
 import type { NextPage } from 'next'
+import Link from 'next/link'
+import Image from 'next/image'
 import { Layout } from '../components/layout'
 import { Button, Slide } from '../components'
-import Image from 'next/image'
 import { useAppContext } from '../contexts/Context'
-import Link from 'next/link'
 import { useWindowSize } from '../hooks/useWindowSize'
 import { useAutoAnimate } from '@formkit/auto-animate/react'
-import { getTransitionSizes } from '@formkit/auto-animate'
 
 const Home: NextPage = () => {
   const data = useAppContext()
@@ -46,10 +45,10 @@ const Home: NextPage = () => {
           )}
         </div>
         {/* SLIDE SELECT */}
-        <div className='absolute bottom-0 desktop:-left-20 left-0 '>
+        <div className='absolute bottom-0 tablet:-left-14 desktop:-left-20 left-0 '>
           {[1, 2, 3, 4].map((slide, index) => (
             <button
-              className={`w-10 tablet:w-20 aspect-square text-xs tablet:text-xl  ${
+              className={`w-10 tablet:w-14 desktop:w-20 aspect-square text-xs tablet:text-xl  ${
                 currentSlide === index
                   ? 'bg-gray-900 text-white'
                   : 'bg-white text-gray-800 hover:bg-lightBlue transition-colors duration-300 active:bg-white'
@@ -147,13 +146,7 @@ const Home: NextPage = () => {
                     <span>View All Projects</span>
                     <div className='-z-10 after:content-[""] after:absolute after:w-full after:h-full after:bg-gradient-to-t after:from-black/70 after:to-transparent after:inset-0'>
                       <Image
-                        src={
-                          media === 'mobile'
-                            ? image.mobile
-                            : media === 'tablet'
-                            ? image.tablet
-                            : image.desktop
-                        }
+                        src={image[media]}
                         alt={name}
                         layout='fill'
                         objectFit='cover'
