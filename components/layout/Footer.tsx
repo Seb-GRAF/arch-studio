@@ -18,11 +18,16 @@ const Footer = ({ data }: Props): JSX.Element => {
         {/* SQUARE WITH LOGO */}
         <div className='relative w-full tablet:w-fit h-fit flex justify-center after:content-[""] after:absolute after:top-0 after:left-0 after:bg-white after:w-full after:h-[50%] after:-z-10 tablet:after:hidden'>
           <div className='flex justify-center items-center relative bg-gray-900 text-white aspect-square w-28 desktop:w-48'>
-            <img
-              src='/assets/logo-light.svg'
-              alt='logo'
-              className='w-14 desktop:w-24'
-            />
+            <Link href={'/'} passHref>
+              <a className='flex items-center justify-center'>
+                <span className='sr-only'>Arch</span>
+                <img
+                  src='/assets/logo-light.svg'
+                  alt='logo'
+                  className='w-14 tablet:w-24'
+                />
+              </a>
+            </Link>
           </div>
         </div>
 

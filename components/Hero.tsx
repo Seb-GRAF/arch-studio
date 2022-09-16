@@ -15,7 +15,7 @@ const Hero = ({
   imageSrc,
 }: Props): JSX.Element => {
   return (
-    <section className='relative'>
+    <section className='relative mb-20 tablet:mb-48 desktop:mb-52'>
       <div className='h-64 tablet:h-[45rem] w-full brightness-75 -z-10 desktop:max-w-[55%]'>
         <Image src={imageSrc} alt='' layout='fill' objectFit='cover' />
       </div>

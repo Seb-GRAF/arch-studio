@@ -66,7 +66,7 @@ const Home: NextPage = () => {
       {/* WELCOME */}
       <section className='relative p-8 tablet:px-0 mb-28 tablet:mt-24 desktop:mt-32'>
         {/* DIVIDER SMALL */}
-        <div className='tablet:hidden w-16 h-px bg-divider my-16'></div>
+        <div className='tablet:hidden w-16 h-px bg-divider my-16' />
 
         {/* WELCOME DIVIDER */}
         <span className='text-center hidden tablet:block tablet:text-9xl tablet:font-bold tablet:text-[18vw] desktop:heading-xl text-lightBlue desktop:absolute desktop:z-10 desktop:top-0'>

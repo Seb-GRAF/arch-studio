@@ -17,7 +17,7 @@ const Contact: NextPage = () => {
         pageName='contact'
         heading='Tell us about your project'
         paragraph='We’d love to hear more about your project. Please, leave a message below or give us a call. We have two offices, one in Texas and one in Tennessee. If you find yourself nearby, come say hello!'
-        imageSrc={`/assets/contact/${media}/image-hero.jpg`}
+        imageSrc={`/assets/contact/desktop/image-hero.jpg`}
       />
     </Layout>
   )
