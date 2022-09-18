@@ -369,21 +369,24 @@
         "mobile": "/assets/about/desktop/image-hero.jpg"
       }
     },
-    "details": [
-      {
-        "name": "Main Office",
-        "mail": "archone@mail.com",
-        "address": "1892 Chenoweth Drive TN",
-        "phone": "123-456-3451",
-        "link": "/contact"
-      },
-      {
-        "name": "Office II",
-        "mail": "archtwo@mail.com",
-        "address": "3399 Wines Lane TX",
-        "phone": "832-123-4321",
-        "link": "/contact"
-      }
-    ]
+    "details": {
+      "heading": "Contact Details",
+      "addresses": [
+        {
+          "name": "Main Office",
+          "mail": "archone@mail.com",
+          "address": "1892 Chenoweth Drive TN",
+          "phone": "123-456-3451",
+          "link": "/contact"
+        },
+        {
+          "name": "Office II",
+          "mail": "archtwo@mail.com",
+          "address": "3399 Wines Lane TX",
+          "phone": "832-123-4321",
+          "link": "/contact"
+        }
+      ]
+    }
   }
 }
