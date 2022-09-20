@@ -24,7 +24,7 @@ const Footer = ({ data }: Props): JSX.Element => {
                 <img
                   src='/assets/logo-light.svg'
                   alt='logo'
-                  className='w-14 tablet:w-24'
+                  className='w-14 desktop:w-24'
                 />
               </a>
             </Link>

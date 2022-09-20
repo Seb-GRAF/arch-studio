@@ -17,7 +17,13 @@ const Hero = ({
   return (
     <section className='relative mb-20 tablet:mb-48 desktop:mb-52'>
       <div className='h-64 tablet:h-[45rem] w-full brightness-75 -z-10 desktop:max-w-[55%]'>
-        <Image src={imageSrc} alt='' layout='fill' objectFit='cover' />
+        <Image
+          src={imageSrc}
+          alt=''
+          layout='fill'
+          objectFit='cover'
+          priority={true}
+        />
       </div>
 
       <div className='bg-white w-[90%] px-8 tablet:pl-14 desktop:pl-44 pt-16 tablet:pt-40 desktop:pt-56 relative -mt-11 max-w-2xl desktop:max-w-2xl tablet:max-w-none tablet:absolute tablet:bottom-0 tablet:right-0 tablet:mt-0 tablet:h-[26rem] desktop:h-[30rem]'>

@@ -33,6 +33,7 @@ const Contact: NextPage = () => {
           <ul className='space-y-10 desktop:space-y-0 desktop:grid desktop:grid-cols-2 desktop:col-span-2'>
             {data.contact.details.addresses.map((address, index) => (
               <li
+                data-sal='slide-up'
                 key={`address-${index}`}
                 className='grid tablet:grid-cols-2 tablet:items-center desktop:grid-cols-1 max-w-2xl'>
                 <address className='text-gray-800 not-italic mb-8'>
@@ -57,7 +58,7 @@ const Contact: NextPage = () => {
       </section>
 
       {/* MAP */}
-      <section className='mb-12 tablet:mb-48'>
+      <section data-sal='slide-up' className='mb-12 tablet:mb-48'>
         <div className='h-[22rem] tablet:h-[35rem] w-full relative'>
           <Image
             src={`/assets/contact/${media}/image-map.png`}
@@ -69,7 +70,9 @@ const Contact: NextPage = () => {
       </section>
 
       {/* CONNECT */}
-      <section className='px-8 desktop:px-0 grid desktop:grid-cols-3'>
+      <section
+        data-sal='slide-up'
+        className='px-8 desktop:px-0 grid desktop:grid-cols-3'>
         <h2 className='tablet:mb-6 text-5xl tablet:heading-md font-bold max-w-[10rem] tablet:max-w-full'>
           Connect with us
         </h2>

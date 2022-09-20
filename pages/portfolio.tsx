@@ -14,7 +14,7 @@ const Portfolio: NextPage = () => {
     <Layout>
       <ul className='px-8 py-16 tablet:p-0 grid gap-6 tablet:grid-cols-2 desktop:grid-cols-3'>
         {data.portfolio.projects.map(({ date, image, link, name }, index) => (
-          <li key={`project-${index}`}>
+          <li key={`project-${index}`} data-sal='slide-up'>
             <Link href={link.href}>
               <a className='relative h-64 tablet:h-96 desktop:h-[35rem] w-full p-6 tablet:p-10 text-white flex flex-col justify-end group'>
                 <h2 className='heading-sm'>{name}</h2>

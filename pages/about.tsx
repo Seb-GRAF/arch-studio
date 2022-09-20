@@ -21,7 +21,9 @@ const About: NextPage = () => {
       />
 
       {/* HERITAGE */}
-      <section className='relative flex gap-32 mb-28 tablet:mb-48 px-8 desktop:px-0'>
+      <section
+        data-sal='slide-up'
+        className='relative flex gap-32 mb-28 tablet:mb-48 px-8 desktop:px-0'>
         <div className='desktop:flex-1 flex flex-col justify-end'>
           {/* DIVIDER SMALL */}
           <div className='w-16 h-px bg-divider mb-20 desktop:mb-12' />
@@ -58,9 +60,10 @@ const About: NextPage = () => {
         <div className='grid tablet:grid-cols-2 gap-20 tablet:gap-2.5 tablet:gap-y-24 desktop:gap-y-16 desktop:gap-8'>
           {data.about.leaders.people.map((leader, index) => (
             <div
+              data-sal='slide-up'
               key={`leader-${index}`}
-              className='flex flex-col w-full desktop:w-[21rem] group'>
-              <div className='w-full h-80 relative mb-3'>
+              className='flex flex-col w-full desktop:w-[21rem]'>
+              <div className='w-full h-80 relative mb-3 group'>
                 <Image
                   src={leader.image[media]}
                   alt={leader.name}
